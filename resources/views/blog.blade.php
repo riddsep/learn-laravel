@@ -1,5 +1,5 @@
 <x-layout>
-    <section class="py-12 bg-white sm:py-16 lg:py-20">
+    <section class="py-12 bg-white sm:py-16 lg:py-20 h-[calc(100vh-80px)]">
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="max-w-md mx-auto text-center">
                 <h2
@@ -31,16 +31,9 @@
                         November 16, 2021
                     </p>
                     <p class="mt-4 text-xl font-bold text-gray-900 font-pj">
-                        {{ $blog["title"] }}
+                        <a href="/blog/{{ $blog["id"] }}"> {{ $blog["title"] }}</a>
                     </p>
-                    <p>{{ Str::limit($blog["content"], 50) }}</p>
-
-                    <a href="#" title="">
-                        <span
-                            class="absolute inset-0"
-                            aria-hidden="true"
-                        ></span>
-                    </a>
+                    <p>{{ Str::limit($blog["content"], 60) }}</p>
                 </div>
                 @endforeach
             </div>
