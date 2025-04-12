@@ -1,141 +1,165 @@
-<!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-100">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-    @vite('resources/css/app.css')
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-</head>
-<body class="h-full">
-  
-<div class="min-h-full">
-    <nav class="bg-gray-800"  x-data="{ isOn: false }">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="flex h-16 items-center justify-between">
-          <div class="flex items-center">
-            <div class="shrink-0">
-              <img class="size-8" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+<x-layout title="Home">
+  <div>
+    <section class="relative py-12 sm:py-16 lg:pt-20 lg:pb-0">
+        <div class="absolute inset-0">
+            <img class="object-cover w-full h-full" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/5/grid-pattern.png" alt="" />
+        </div>
+
+        <div class="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+            <div class="max-w-xl mx-auto text-center">
+                <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">Helping developers to get their dream job</h1>
+                <p class="max-w-md mx-auto mt-6 text-base font-normal leading-7 text-gray-500">We provide valuable blog articles filled with tips, guides, and insights to help developers grow their careers and land the job they’ve always wanted.</p>
+
+                <form action="#" method="POST" class="max-w-md mx-auto mt-8 space-y-4 sm:space-x-4 sm:flex sm:space-y-0 sm:items-end">
+                    <div class="flex-1">
+                        <label for="" class="sr-only"> Email address </label>
+                        <div>
+                            <input type="email" name="" id="" class="block w-full px-4 py-3 sm:py-3.5 text-base font-medium text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg sm:text-sm focus:ring-gray-900 focus:border-gray-900" placeholder="Email address" />
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <div class="absolute transitiona-all duration-1000 opacity-70 inset-0 bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"></div>
+
+                        <button
+                            type="button"
+                            class="inline-flex relative items-center justify-center w-full sm:w-auto px-8 py-3 sm:text-sm text-base sm:py-3.5 font-semibold text-white transition-all duration-200 bg-indigo-600 border border-transparent rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                        >
+                            Join Now
+                        </button>
+                    </div>
+                </form>
+
+                <ul class="flex items-center justify-center mt-6 space-x-6 sm:space-x-8">
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="text-xs font-medium text-gray-900 sm:text-sm"> Weekly new articles </span>
+                    </li>
+
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="text-xs font-medium text-gray-900 sm:text-sm"> Join other 1600+ Devs </span>
+                    </li>
+                </ul>
             </div>
-            <div class="hidden md:block">
-              <div class="ml-10 flex items-baseline space-x-4">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
-                <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Blog</a>
-                <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
-                <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
-                
-              </div>
-            </div>
-          </div>
-          <div class="hidden md:block">
-            <div class="ml-4 flex items-center md:ml-6">
-           
-  
-              <!-- Profile dropdown -->
-              <div class="relative ml-3">
-                <div>
-                  <button
-                  @click="isOn = !isOn" type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden" id="user-menu-button" aria-expanded="false" aria-haspopup="true" >
-                    <span class="absolute -inset-1.5"></span>
-                    <span class="sr-only">Open user menu</span>
-                    <img class="size-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                  </button>
+        </div>
+
+        <div class="flex w-full gap-6 pb-8 mt-12 overflow-x-auto sm:mt-16 lg:mt-20 snap-x">
+            <div class="relative snap-center scroll-ml-6 shrink-0 first:pl-6 last:pr-6">
+                <div class="overflow-hidden w-[300px] lg:w-[420px] transition-all duration-200 transform bg-white border border-gray-200 rounded-2xl hover:shadow-lg hover:-translate-y-1">
+                    <div class="px-4 py-5 sm:p-5">
+                        <div class="flex items-start lg:items-center">
+                            <a href="#" title="" class="shrink-0">
+                                <img class="lg:h-24 w-14 h-14 lg:w-24 rounded-xl object-cvoer" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/5/thumbnail-1.png" alt="" />
+                            </a>
+
+                            <div class="flex-1 ml-4 lg:ml-6">
+                                <p class="text-xs font-medium text-gray-900 lg:text-sm">
+                                    <a href="#" title="" class=""> Growth </a>
+                                </p>
+                                <p class="mt-2 text-sm font-bold text-gray-900 lg:text-lg group-hover:text-gray-600">
+                                    <a href="#" title="" class=""> How a visual artist redefines success in graphic design </a>
+                                </p>
+                                <p class="mt-2 text-xs font-medium text-gray-500 lg:text-sm">April 09, 2022</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-  
-                <!--
-                  Dropdown menu, show/hide based on menu state.
-  
-                  Entering: "transition ease-out duration-100"
-                    From: "transform opacity-0 scale-95"
-                    To: "transform opacity-100 scale-100"
-                  Leaving: "transition ease-in duration-75"
-                    From: "transform opacity-100 scale-100"
-                    To: "transform opacity-0 scale-95"
-                -->
-                <div 
-                x-show="isOn"
-                x-transition:enter="transition ease-out duration-100 transform"
-                x-transition:enter-start="opacity-0 scale-95"
-                x-transition:enter-end="opacity-100 scale-100"
-                x-transition:leave="transition ease-in duration-75 transform"
-                x-transition:leave-start="opacity-100 scale-100"
-                x-transition:leave-end="opacity-0 scale-95" 
-                class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-hidden" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                  <!-- Active: "bg-gray-100 outline-hidden", Not Active: "" -->
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+            </div>
+
+            <div class="relative snap-center scroll-ml-6 shrink-0 first:pl-6 last:pr-6">
+                <div class="overflow-hidden w-[300px] lg:w-[420px] transition-all duration-200 transform bg-white border border-gray-200 rounded-2xl hover:shadow-lg hover:-translate-y-1">
+                    <div class="px-4 py-5 sm:p-5">
+                        <div class="flex items-start lg:items-center">
+                            <a href="#" title="" class="shrink-0">
+                                <img class="lg:h-24 w-14 h-14 lg:w-24 rounded-xl object-cvoer" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/5/thumbnail-2.png" alt="" />
+                            </a>
+
+                            <div class="flex-1 ml-4 lg:ml-6">
+                                <p class="text-xs font-medium text-gray-900 lg:text-sm">
+                                    <a href="#" title="" class=""> Growth </a>
+                                </p>
+                                <p class="mt-2 text-sm font-bold text-gray-900 lg:text-lg group-hover:text-gray-600">
+                                    <a href="#" title="" class=""> How a visual artist redefines success in graphic design </a>
+                                </p>
+                                <p class="mt-2 text-xs font-medium text-gray-500 lg:text-sm">April 09, 2022</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="-mr-2 flex md:hidden">
-            <!-- Mobile menu button -->
-            <button @click="isOn = !isOn" type="button" class="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden" aria-controls="mobile-menu" aria-expanded="false">
-              <span class="absolute -inset-0.5"></span>
-              <span class="sr-only">Open main menu</span>
-              <!-- Menu open: "hidden", Menu closed: "block" -->
-              <svg :class="{'hidden': isOn, 'block': !isOn }" class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-              <!-- Menu open: "block", Menu closed: "hidden" -->
-              <svg :class="{'block': isOn, 'hidden': !isOn }" class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Mobile menu, show/hide based on menu state. -->
-      <div x-show="isOn" class="md:hidden" id="mobile-menu">
-        <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-          <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
-          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
-          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reports</a>
-        </div>
-        <div class="border-t border-gray-700 pt-4 pb-3">
-          <div class="flex items-center px-5">
-            <div class="shrink-0">
-              <img class="size-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+
+            <div class="relative snap-center scroll-ml-6 shrink-0 first:pl-6 last:pr-6">
+                <div class="overflow-hidden w-[300px] lg:w-[420px] transition-all duration-200 transform bg-white border border-gray-200 rounded-2xl hover:shadow-lg hover:-translate-y-1">
+                    <div class="px-4 py-5 sm:p-5">
+                        <div class="flex items-start lg:items-center">
+                            <a href="#" title="" class="shrink-0">
+                                <img class="lg:h-24 w-14 h-14 lg:w-24 rounded-xl object-cvoer" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/5/thumbnail-3.png" alt="" />
+                            </a>
+
+                            <div class="flex-1 ml-4 lg:ml-6">
+                                <p class="text-xs font-medium text-gray-900 lg:text-sm">
+                                    <a href="#" title="" class=""> Growth </a>
+                                </p>
+                                <p class="mt-2 text-sm font-bold text-gray-900 lg:text-lg group-hover:text-gray-600">
+                                    <a href="#" title="" class=""> How a visual artist redefines success in graphic design </a>
+                                </p>
+                                <p class="mt-2 text-xs font-medium text-gray-500 lg:text-sm">April 09, 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="ml-3">
-              <div class="text-base/5 font-medium text-white">Tom Cook</div>
-              <div class="text-sm font-medium text-gray-400">tom@example.com</div>
+
+            <div class="relative snap-center scroll-ml-6 shrink-0 first:pl-6 last:pr-6">
+                <div class="overflow-hidden w-[300px] lg:w-[420px] transition-all duration-200 transform bg-white border border-gray-200 rounded-2xl hover:shadow-lg hover:-translate-y-1">
+                    <div class="px-4 py-5 sm:p-5">
+                        <div class="flex items-start lg:items-center">
+                            <a href="#" title="" class="shrink-0">
+                                <img class="lg:h-24 w-14 h-14 lg:w-24 rounded-xl object-cvoer" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/5/thumbnail-4.png" alt="" />
+                            </a>
+
+                            <div class="flex-1 ml-4 lg:ml-6">
+                                <p class="text-xs font-medium text-gray-900 lg:text-sm">
+                                    <a href="#" title="" class=""> Growth </a>
+                                </p>
+                                <p class="mt-2 text-sm font-bold text-gray-900 lg:text-lg group-hover:text-gray-600">
+                                    <a href="#" title="" class=""> How a visual artist redefines success in graphic design </a>
+                                </p>
+                                <p class="mt-2 text-xs font-medium text-gray-500 lg:text-sm">April 09, 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button type="button" class="relative ml-auto shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
-              <span class="absolute -inset-1.5"></span>
-              <span class="sr-only">View notifications</span>
-              <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
-              </svg>
-            </button>
-          </div>
-          <div class="mt-3 space-y-1 px-2">
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Your Profile</a>
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Settings</a>
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Sign out</a>
-          </div>
+
+            <div class="relative snap-center scroll-ml-6 shrink-0 first:pl-6 last:pr-6">
+                <div class="overflow-hidden w-[300px] lg:w-[420px] transition-all duration-200 transform bg-white border border-gray-200 rounded-2xl hover:shadow-lg hover:-translate-y-1">
+                    <div class="px-4 py-5 sm:p-5">
+                        <div class="flex items-start lg:items-center">
+                            <a href="#" title="" class="shrink-0">
+                                <img class="lg:h-24 w-14 h-14 lg:w-24 rounded-xl object-cvoer" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/5/thumbnail-5.png" alt="" />
+                            </a>
+
+                            <div class="flex-1 ml-4 lg:ml-6">
+                                <p class="text-xs font-medium text-gray-900 lg:text-sm">
+                                    <a href="#" title="" class=""> Growth </a>
+                                </p>
+                                <p class="mt-2 text-sm font-bold text-gray-900 lg:text-lg group-hover:text-gray-600">
+                                    <a href="#" title="" class=""> How a visual artist redefines success in graphic design </a>
+                                </p>
+                                <p class="mt-2 text-xs font-medium text-gray-500 lg:text-sm">April 09, 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </nav>
-  
-    <header class="bg-white shadow-sm">
-      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
-      </div>
-    </header>
-    <main>
-      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <!-- Your content -->
-      </div>
-    </main>
-  </div>
-  </body>
-</html>
+    </section>
+</div>
+
+</x-layout>

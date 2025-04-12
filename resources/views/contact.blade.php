@@ -5,12 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Contact</title>
+        @vite('resources/css/app.css')
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
     <body>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/blog">Blog</a>
-        <a href="/contact">Contact</a>
+        <x-navbar/>
         <h1>CONTACT PAGE</h1>
 
         <p>Email : {{ $email }}</p>
