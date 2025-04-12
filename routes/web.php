@@ -13,14 +13,16 @@ Route::get('/features', function () {
 Route::get("/blog", function () {
     $blogs = [
         [
-            "title" => "Belajar Laravel Dasar",
-            "content" => "Laravel adalah framework PHP yang sangat populer untuk pengembangan web."
+            "title" => "Learning Basic Laravel",
+            "content" => "Laravel is one of the most popular PHP frameworks used for modern web development. It offers an elegant syntax and a powerful set of tools that make building web applications more efficient and enjoyable."
         ],
         [
-            "title" => "Mengenal Blade Template",
-            "content" => "Blade adalah templating engine bawaan Laravel yang memudahkan dalam membuat tampilan dinamis."
+            "title" => "Understanding Blade Template",
+            "content" => "Blade is Laravel's built-in templating engine that helps developers create dynamic and reusable views with ease. It allows you to use PHP code directly within your HTML files while keeping the structure clean and readable."
         ]
     ];
+
+
 
     return view("blog", compact('blogs'));
 });
