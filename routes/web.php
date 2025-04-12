@@ -6,8 +6,8 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/about', function () {
-    return view('about', ["name" => "Rido Septiawan"]);
+Route::get('/features', function () {
+    return view('features');
 });
 
 Route::get("/blog", function () {

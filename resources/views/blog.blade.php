@@ -1,31 +1,35 @@
-<x-layout title="Blog">
-    <section id="latest-articles" class="py-12 bg-gray-50">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-extrabold text-center mb-12">Latest Blog Posts</h2>
-  
-          <!-- Blog Posts List -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Single Blog Post -->
-            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-              <h3 class="text-xl font-semibold mb-4">How to Build Your First Web App</h3>
-              <p class="text-gray-600 mb-4">A step-by-step guide to building your first web application using modern frameworks.</p>
-              <a href="#" class="text-blue-600 hover:text-blue-800">Read More →</a>
-            </div>
-  
-            <!-- Single Blog Post -->
-            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-              <h3 class="text-xl font-semibold mb-4">Understanding Tailwind CSS for Beginners</h3>
-              <p class="text-gray-600 mb-4">Learn the basics of Tailwind CSS and how it can improve your development workflow.</p>
-              <a href="#" class="text-blue-600 hover:text-blue-800">Read More →</a>
-            </div>
-  
-            <!-- Single Blog Post -->
-            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-              <h3 class="text-xl font-semibold mb-4">Mastering JavaScript ES6 Features</h3>
-              <p class="text-gray-600 mb-4">A comprehensive guide to mastering the new features introduced in JavaScript ES6.</p>
-              <a href="#" class="text-blue-600 hover:text-blue-800">Read More →</a>
-            </div>
-          </div>
+<x-layout>
+  <section class="py-12 bg-white sm:py-16 lg:py-20 h-[calc(100vh-80px)]">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="max-w-md mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl font-pj">Read our blog</h2>
+            <p class="mt-5 font-normal text-gray-600 font-pj">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</p>
         </div>
-      </section>
+
+        <div class="grid max-w-3xl grid-cols-1 mx-auto mt-8 text-center sm:mt-16 sm:text-left sm:grid-cols-2 gap-y-8 gap-x-8 lg:gap-x-20">
+            <div class="relative group">
+                <div class="overflow-hidden rounded-lg aspect-w-16 aspect-h-9">
+                    <img class="object-cover w-full h-full transition-all duration-300 transform group-hover:scale-125" src="https://cdn.rareblocks.xyz/collection/clarity/images/blog/1/blog-1.png" alt="" />
+                </div>
+                <p class="mt-6 text-sm font-normal text-gray-600 font-pj">November 22, 2021</p>
+                <p class="mt-4 text-xl font-bold text-gray-900 font-pj">How To Optimize Progressive Web Apps: Going Beyond The Basics</p>
+                <a href="#" title="">
+                    <span class="absolute inset-0" aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div class="relative group">
+                <div class="overflow-hidden rounded-lg aspect-w-16 aspect-h-9">
+                    <img class="object-cover w-full h-full transition-all duration-300 transform group-hover:scale-125" src="https://cdn.rareblocks.xyz/collection/clarity/images/blog/1/blog-2.png" alt="" />
+                </div>
+                <p class="mt-6 text-sm font-normal text-gray-600 font-pj">November 16, 2021</p>
+                <p class="mt-4 text-xl font-bold text-gray-900 font-pj">How To Optimize Progressive Web Apps: Going Beyond The Basics</p>
+                <a href="#" title="">
+                    <span class="absolute inset-0" aria-hidden="true"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 </x-layout>

@@ -24,13 +24,10 @@
           </div>
 
           <div class="hidden md:items-center md:justify-start md:ml-16 md:mr-auto md:space-x-10 md:flex">
-              <a href="/" title="" class="text-base font-medium text-gray-900 transition-all duration-200 hover:text-indigo-600"> Home </a>
-
-              <a href="/blog" title="" class="text-base font-medium text-gray-900 transition-all duration-200 hover:text-indigo-600"> Blog </a>
-
-              <a href="/about" title="" class="text-base font-medium text-gray-900 transition-all duration-200 hover:text-indigo-600"> About </a>
-
-              <a href="/contact" title="" class="text-base font-medium text-gray-900 transition-all duration-200 hover:text-indigo-600"> Contact </a>
+              <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
+              <x-nav-link href="/features" :active="request()->is('features')">Features</x-nav-link>
+              <x-nav-link href="/blog" :active="request()->is('blog')">Blog</x-nav-link>
+              <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
           </div>
 
           <div class="hidden md:block">
