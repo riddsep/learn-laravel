@@ -31,7 +31,7 @@
                         November 16, 2021
                     </p>
                     <p class="mt-4 text-xl font-bold text-gray-900 font-pj">
-                        <a href="/blog/{{ $blog["id"] }}"> {{ $blog["title"] }}</a>
+                        <a href="/blog/{{ $blog["slug"] }}"> {{ $blog["title"] }}</a>
                     </p>
                     <p>{{ Str::limit($blog["content"], 60) }}</p>
                 </div>
