@@ -1,5 +1,5 @@
 <x-layout>
-    <section class="py-12 bg-white sm:py-16 lg:py-20 h-[calc(100vh-80px)]">
+    <section class="py-12 bg-white sm:py-16 lg:py-20 ">
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="max-w-md mx-auto text-center">
                 <h2
@@ -21,16 +21,12 @@
                     <div
                         class="overflow-hidden rounded-lg aspect-w-16 aspect-h-9"
                     >
-                        <img
-                            class="object-cover w-full h-full transition-all duration-300 transform group-hover:scale-125"
-                            src="https://cdn.rareblocks.xyz/collection/clarity/images/blog/1/blog-2.png"
-                            alt=""
-                        />
+                       
                     </div>
                     <p class="mt-6 text-sm font-normal text-gray-600 font-pj">
-                        November 16, 2021
+                        {{ $blog->created_at->diffForHumans() }}
                     </p>
-                    <p class="mt-4 text-xl font-bold text-gray-900 font-pj">
+                    <p class="mt-4 text-lg font-bold text-gray-900 font-pj">
                         <a href="/blog/{{ $blog["slug"] }}"> {{ $blog["title"] }}</a>
                     </p>
                     <p>{{ Str::limit($blog["content"], 60) }}</p>

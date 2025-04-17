@@ -26,7 +26,7 @@
                                         <span
                                             class="font-semibold text-gray-800"
                                         >
-                                            {{ $blog["username"] }}
+                                            {{ $blog->user->name }}
                                         </span>
 
                                         <!-- Dropdown Card -->
@@ -130,7 +130,7 @@
                                     <li
                                         class="inline-block relative pe-6 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-2 before:-translate-y-1/2 before:size-1 before:bg-gray-300 before:rounded-full"
                                     >
-                                        Jan 18
+                                        {{ $blog->created_at->format('d F, Y') }}
                                     </li>
                                     <li
                                         class="inline-block relative pe-6 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-2 before:-translate-y-1/2 before:size-1 before:bg-gray-300 before:rounded-full"
@@ -179,11 +179,6 @@
                         {{ $blog["content"] }}
                     </p>
                 </div>
-
-                <p class="text-lg text-gray-800">
-                    We're proud to be a part of creating a more open culture and
-                    to continue building a product that supports this vision.
-                </p>
 
                 <figure>
                     <img
