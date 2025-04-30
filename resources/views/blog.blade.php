@@ -1,31 +1,38 @@
-<x-layout title="Blog">
-    <section id="latest-articles" class="py-12 bg-gray-50">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-extrabold text-center mb-12">Latest Blog Posts</h2>
-  
-          <!-- Blog Posts List -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Single Blog Post -->
-            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-              <h3 class="text-xl font-semibold mb-4">How to Build Your First Web App</h3>
-              <p class="text-gray-600 mb-4">A step-by-step guide to building your first web application using modern frameworks.</p>
-              <a href="#" class="text-blue-600 hover:text-blue-800">Read More →</a>
+<x-layout>
+    <section class="py-12 bg-white sm:py-16 lg:py-20 ">
+        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="max-w-md mx-auto text-center">
+                <h2
+                    class="text-3xl font-bold text-gray-900 sm:text-4xl font-pj"
+                >
+                    Read our blog
+                </h2>
+                <p class="mt-5 font-normal text-gray-600 font-pj">
+                    With lots of unique blocks, you can easily build a page
+                    without coding. Build your next landing page.
+                </p>
             </div>
-  
-            <!-- Single Blog Post -->
-            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-              <h3 class="text-xl font-semibold mb-4">Understanding Tailwind CSS for Beginners</h3>
-              <p class="text-gray-600 mb-4">Learn the basics of Tailwind CSS and how it can improve your development workflow.</p>
-              <a href="#" class="text-blue-600 hover:text-blue-800">Read More →</a>
+
+            <div
+                class="grid max-w-3xl grid-cols-1 mx-auto mt-8 text-center sm:mt-16 sm:text-left sm:grid-cols-2 gap-y-8 gap-x-8 lg:gap-x-20"
+            >
+                @foreach($blogs as $blog)
+                <div class="relative group">
+                    <div
+                        class="overflow-hidden rounded-lg aspect-w-16 aspect-h-9"
+                    >
+                       
+                    </div>
+                    <p class="mt-6 text-sm font-normal text-gray-600 font-pj">
+                        {{ $blog->created_at->diffForHumans() }}
+                    </p>
+                    <p class="mt-4 text-lg font-bold text-gray-900 font-pj">
+                        <a href="/blog/{{ $blog["slug"] }}"> {{ $blog["title"] }}</a>
+                    </p>
+                    <p>{{ Str::limit($blog["content"], 60) }}</p>
+                </div>
+                @endforeach
             </div>
-  
-            <!-- Single Blog Post -->
-            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-              <h3 class="text-xl font-semibold mb-4">Mastering JavaScript ES6 Features</h3>
-              <p class="text-gray-600 mb-4">A comprehensive guide to mastering the new features introduced in JavaScript ES6.</p>
-              <a href="#" class="text-blue-600 hover:text-blue-800">Read More →</a>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 </x-layout>

@@ -15,7 +15,7 @@
    <x-navbar/>
     
     <main class="bg-white">
-      <div class="mx-auto max-w-7xl ">
+      <div class="mx-auto max-w-7xl">
         {{ $slot }}
       </div>
     </main>
